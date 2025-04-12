@@ -8,27 +8,32 @@ import com.ecommerce.util.ResponseUtil;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
     private final ProductService productService;
+
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
 
     @GetMapping
     public ResponseEntity<SuccessResponse<List<Product>>> getProductsByInventoryId(@RequestParam("inventoryId") int inventoryId) {
-        List<Product> products = productService.getProductsByInventoryId(inventoryId);
-        return ResponseUtil.successResponse(products, SuccessMessage.FETCHED_PRODUCTS_BY_INVENTORY_ID);
+        return ResponseUtil.successResponse(
+                productService.getProductsByInventoryId(inventoryId),
+                SuccessMessage.FETCHED_PRODUCTS_BY_INVENTORY_ID
+        );
     }
 
     @PostMapping
     public ResponseEntity<SuccessResponse<Product>> createProduct(@RequestBody Product product) {
         Product createdProduct = productService.createProduct(product);
-        return ResponseUtil.createdResponse(createdProduct, "Product created successfully");
+        return ResponseUtil.createdResponse(
+                createdProduct,
+                SuccessMessage.PRODUCT_CREATED
+        );
     }
 
 //    @PostMapping
