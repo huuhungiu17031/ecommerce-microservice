@@ -1,0 +1,6 @@
+.env
+volumes
+.idea
+inventory/target
+product/target
+order/target

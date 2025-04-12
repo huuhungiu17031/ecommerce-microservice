@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: product
+  data:
+    mongodb:
+      host: ${MONGO_HOST:localhost}
+      port: ${MONGO_PORT:27017}
+      database: ${MONGO_DATABASE:admin}
+      username: ${MONGO_USERNAME:mongouser}
+      password: ${MONGO_PASSWORD:mongopass}
+server:
+  port: 9002
+
+
+mongock:
+  migration-scan-package:
+    - io.mongock.examples.migration

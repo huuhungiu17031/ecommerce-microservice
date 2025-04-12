@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: inventory-service
+server:
+  port: 9000
+
+app:
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:5455/${POSTGRES_DATABASE_NAME:ecommerce_database}
+    username: ${POSTGRES_USER:myuser}
+    password: ${POSTGRES_PASS:mypassword}
+
