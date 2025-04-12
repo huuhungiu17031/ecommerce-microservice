@@ -1,5 +1,6 @@
 package com.ecommerce.migration;
 
+import com.ecommerce.modal.Brand;
 import com.ecommerce.modal.Category;
 
 import io.mongock.api.annotations.BeforeExecution;
@@ -22,16 +23,18 @@ public class MongoInit {
     public void beforeExecution() {
         mongoTemplate.dropCollection(Product.class);
         mongoTemplate.dropCollection(Category.class);
+        mongoTemplate.dropCollection(Brand.class);
     }
 
     @Execution
     public void execution() {
-
+        mongoTemplate.createCollection(Product.class);
     }
 
     @RollbackExecution
     public void rollback() {
         mongoTemplate.dropCollection(Product.class);
         mongoTemplate.dropCollection(Category.class);
+        mongoTemplate.dropCollection(Brand.class);
     }
 }
