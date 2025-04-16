@@ -1,5 +1,7 @@
 .env
-volumes
+volumes/mongo
+volumes/postgres
+volumes/postgres_order
 .idea
 inventory/target
 product/target

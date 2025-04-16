@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: email
+  mail:
+    host: ${MAIL_HOG_HOST:localhost}
+    port: 1025
+    username: 'system@notification.com'
+    password: ''
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+server:
+  port: 9003
