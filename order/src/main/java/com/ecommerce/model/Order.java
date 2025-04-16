@@ -9,10 +9,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "inventory")
-public class Inventory {
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String inventoryName;
+    private int userId;
+    private int shopId;
+    private String requestId;
+    private int totalItems;
+    private int totalPrice;
+    private String status;
 }

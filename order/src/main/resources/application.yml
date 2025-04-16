@@ -1,12 +1,21 @@
 spring:
   application:
     name: order-service
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+  rabbitmq:
+    host: ${RABBIT_HOST:localhost}
+    port: 5672
+    username: ${RABBIT_USERNAME:guest}
+    password: ${RABBIT_PASSWORD:guest}
 server:
   port: 9001
 
 app:
   datasource:
-    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:5455/${POSTGRES_DATABASE_NAME:ecommerce_database}
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:5456/${POSTGRES_DATABASE_NAME:postgres}
     username: ${POSTGRES_USER:myuser}
     password: ${POSTGRES_PASS:mypassword}
 
