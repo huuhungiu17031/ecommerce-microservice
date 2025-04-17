@@ -8,6 +8,8 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class OrderPayload extends Order {
     List<OrderItem> orderItems;
 }

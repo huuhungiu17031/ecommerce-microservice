@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,9 +17,10 @@ public class OrderItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String productId;
+    private int productId;
     private int quantity;
-    private double price;
+    private BigDecimal price;
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")

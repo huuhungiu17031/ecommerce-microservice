@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class OrderServiceImpl implements OrderService {
-    private final RabbitMq rabbitMq;
-    public OrderServiceImpl(
-            RabbitMq rabbitMq
-    ) {
-        this.rabbitMq = rabbitMq;
-    }
+//    private final RabbitMq rabbitMq;
+//    public OrderServiceImpl(
+//            RabbitMq rabbitMq
+//    ) {
+//        this.rabbitMq = rabbitMq;
+//    }
 
     @Override
     public void placeOrder(OrderPayload orderPayload) {
